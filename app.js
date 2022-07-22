@@ -4,6 +4,7 @@ const dotenv = require("dotenv").config();
 const colors = require("colors");
 const path = require("path");
 const cookieParser = require("cookie-parser");
+const { notFoundHandler, errorHandler } = require("./middleware/errorHandler");
 const app = express();
 const port = process.env.PORT || 8000;
 
@@ -22,8 +23,13 @@ app.use(express.static(path.join(__dirname, "public")));
 //parse cookies
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
-app.get("/", (req, res) => {
-  res.send("Hello, world!");
-});
+//routes
+app.use("/", require("./routes/loginRoutes"));
+app.use("/users", require("./routes/usersRoutes"));
+app.use("/inbox", require("./routes/inboxRoutes"));
+
+//error handlers
+app.use(notFoundHandler);
+app.use(errorHandler);
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
