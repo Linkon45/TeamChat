@@ -1,5 +1,4 @@
 const getLogin = (req, res) => {
-    console.log("Hello Login")
   res.render("index", {
     title: "Login - TeamChat",
   });
