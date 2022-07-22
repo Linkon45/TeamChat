@@ -1,7 +1,5 @@
 const getInbox = (req, res) => {
-  res.render("inbox", {
-    title: "Inbox - TeamChat",
-  });
+  res.render("inbox");
 };
 
 module.exports = {

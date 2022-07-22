@@ -1,7 +1,5 @@
 const getLogin = (req, res) => {
-  res.render("index", {
-    title: "Login - TeamChat",
-  });
+  res.render("index");
 };
 
 module.exports = {
