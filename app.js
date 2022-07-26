@@ -4,7 +4,10 @@ const dotenv = require("dotenv").config();
 const colors = require("colors");
 const path = require("path");
 const cookieParser = require("cookie-parser");
-const { notFoundHandler, errorHandler } = require("./middleware/errorHandler");
+const {
+  notFoundHandler,
+  errorHandler,
+} = require("./middleware/common/errorHandler");
 const app = express();
 const port = process.env.PORT || 8000;
 

@@ -1,4 +1,4 @@
-var createError = require("http-errors");
+const createError = require("http-errors");
 const notFoundHandler = (req, res, next) => {
   return next(createError(404, "Your requested page does not exist."));
 };
